@@ -13,6 +13,8 @@ from keras.preprocessing.sequence import pad_sequences
 from tensorflow.keras.callbacks import EarlyStopping
 from tensorflow.python.keras.layers import Dropout
 import numpy as np
+from matplotlib.pyplot import figure
+import matplotlib.pyplot as plt
 
 path = "Tez hakkında/Dudaktan Kalbe.txt"
 
@@ -161,6 +163,15 @@ history = model.fit(X_train, y_train, batch_size=64, epochs=1, shuffle=True, ver
 #model.save('model2.h5')
 #dump(tokenizer, open('tokenizer.pkl', 'wb'))
 
+figure(figsize=(8, 6), dpi=80)
+
+plt.plot(history.history['accuracy'])
+plt.plot(history.history['val_accuracy'])
+plt.title('model accuracy')
+plt.ylabel('accuracy')
+plt.xlabel('epoch')
+plt.legend(['train', 'test'], loc='upper left')
+plt.show()
 
 # load cleaned text sequences	
 in_filename = 'wiki_sequences.txt'
@@ -180,4 +191,6 @@ seed_text = ""
 
 # generate new text
 
-generated = generate_seq(model, tokenizer, len(seed_text) + 1, seed_text, 1)
+generated = generate_seq(model, tokenizer, seq_length, seed_text, 5)
+
+
