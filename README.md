@@ -7,6 +7,7 @@ vectors.txt = https://www.file.io/Ywhq/download/P2vkTRUNwoV2
 Since vectors.txt is greater than 100 mb it was not possible to upload this file!
 
 Both codes that I have used in this thesis are specified in the links below, and the evaluation was made with these two models.
+
 word-by-word reference: https://machinelearningmastery.com/how-to-develop-a-word-level-neural-language-model-in-keras/
 
 char_by_char reference: https://blog.devgenius.io/next-word-prediction-using-long-short-term-memory-lstm-13ea21eb9ead
