@@ -118,6 +118,8 @@ word_index = tokenizer.word_index
 sequences = array(sequences)
 X, y = sequences[:,:-1], sequences[:,-1]
 #y = to_categorical(y, num_classes=vocab_size)
+
+# By Author
 X_train, X_test, y_train, y_test = train_test_split(X, y,test_size=0.05, shuffle = True, random_state = 7)
 X_train, X_val, y_train, y_val = train_test_split(X_train, y_train, test_size=0.05, shuffle = True, random_state= 7)
 seq_length = X_train.shape[1]
@@ -128,11 +130,10 @@ print("y_test shape: {}".format(y_test.shape))
 print("X_val shape: {}".format(X_val.shape))
 print("y val shape: {}".format(y_val.shape))
 
-
+# Adapted from: https://www.youtube.com/watch?v=ivqXiW0X42Q
 embedding_index = {}
 f = open("Tez hakkında/vectors.txt", encoding="utf8")
 
-#Adapted from: https://www.youtube.com/watch?v=ivqXiW0X42Q
 for line in f:
 	values = line.split()
 	word = values[0]
