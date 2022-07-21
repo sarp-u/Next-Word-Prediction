@@ -1,3 +1,10 @@
+"""
+Resource for this code can be found in the following link.
+https://blog.devgenius.io/next-word-prediction-using-long-short-term-memory-lstm-13ea21eb9ead
+
+Char by chard word prediction explained clearly when dealing with next word prediction
+"""
+
 from google.colab import drive
 drive.mount('/content/drive')
 
