@@ -1,3 +1,11 @@
+"""
+Resources for this code can be found in the following links.
+https://machinelearningmastery.com/how-to-develop-a-word-level-neural-language-model-in-keras/
+https://www.youtube.com/watch?v=ivqXiW0X42Q
+
+In this two sites, embedding layer and word level text developing is explanied clearly
+"""
+
 import string
 import keras.optimizers
 from tensorflow.keras.preprocessing.text import Tokenizer
