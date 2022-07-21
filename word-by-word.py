@@ -2,8 +2,9 @@
 Resources for this code can be found in the following links.
 https://machinelearningmastery.com/how-to-develop-a-word-level-neural-language-model-in-keras/
 https://www.youtube.com/watch?v=ivqXiW0X42Q
+https://blog.devgenius.io/next-word-prediction-using-long-short-term-memory-lstm-13ea21eb9ead
 
-In this two sites, embedding layer and word level text developing is explanied clearly
+In this three sites, embedding layer and word level text developing is explanied clearly
 """
 
 import string
@@ -175,7 +176,7 @@ history = model.fit(X_train, y_train, batch_size=64, epochs=1, shuffle=True, ver
 #model.save('model2.h5')
 #dump(tokenizer, open('tokenizer.pkl', 'wb'))
 
-#By author
+#Based on https://blog.devgenius.io/next-word-prediction-using-long-short-term-memory-lstm-13ea21eb9ead
 figure(figsize=(8, 6), dpi=80)
 
 plt.plot(history.history['accuracy'])
