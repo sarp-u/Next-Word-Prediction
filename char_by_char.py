@@ -27,6 +27,7 @@ np.random.seed(42)
 
 path = 'Dudaktan Kalbe.txt'
 
+# Based on https://blog.devgenius.io/next-word-prediction-using-long-short-term-memory-lstm-13ea21eb9ead
 sns.set(style='whitegrid', palette='muted', font_scale=1.5)
 rcParams['figure.figsize'] = 12, 5
 #Loading the data
@@ -56,6 +57,7 @@ for i, sentence in enumerate(sentences):
         X[i, t, char_indices[char]] = 1
     y[i, char_indices[next_chars[i]]] = 1
 
+# By Author
 X_train, X_test, y_train, y_test = train_test_split(X, y,test_size=0.05, shuffle = True, random_state = 7)
 X_train, X_val, y_train, y_val = train_test_split(X_train, y_train, test_size=0.05, shuffle = True, random_state= 7)
 print("X_train shape: {}".format(X_train.shape))
@@ -65,6 +67,7 @@ print("y_test shape: {}".format(y_test.shape))
 print("X_val shape: {}".format(X_val.shape))
 print("y val shape: {}".format(y_val.shape))
 
+# Based on https://blog.devgenius.io/next-word-prediction-using-long-short-term-memory-lstm-13ea21eb9ead
 model = Sequential();
 model.add(LSTM(128, input_shape=(SEQUENCE_LENGTH, len(chars))))
 model.add(Dense(len(chars)))
@@ -79,6 +82,7 @@ pickle.dump(history, open("history1.p", "wb"))
 model = load_model('next_word_model1.h5')
 history = pickle.load(open("history1.p", "rb"))
 
+# By Author 
 figure(figsize=(8, 6), dpi=80)
 plt.plot(history.history['accuracy'])
 plt.plot(history.history['val_accuracy'])
