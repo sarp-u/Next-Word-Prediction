@@ -11,3 +11,5 @@ Both codes that I have used in this thesis are specified in the links below, and
 word-by-word reference: https://machinelearningmastery.com/how-to-develop-a-word-level-neural-language-model-in-keras/
 
 char_by_char reference: https://blog.devgenius.io/next-word-prediction-using-long-short-term-memory-lstm-13ea21eb9ead
+
+Embedding layer reference: https://www.youtube.com/watch?v=ivqXiW0X42Q
