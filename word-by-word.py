@@ -18,7 +18,7 @@ import matplotlib.pyplot as plt
 
 path = "Tez hakkında/Dudaktan Kalbe.txt"
 
-
+#Based on https://machinelearningmastery.com/how-to-develop-a-word-level-neural-language-model-in-keras/
 # load doc into memory
 def load_doc(filename):
 	# open the file as read only
@@ -75,6 +75,7 @@ def generate_seq(model, tokenizer, seq_length, seed_text, n_words):
 		result.append(out_word)
 	return ' '.join(result)
 
+#Based on https://machinelearningmastery.com/how-to-develop-a-word-level-neural-language-model-in-keras/
 doc = load_doc(path)
 print(doc[:200])
 
@@ -131,6 +132,7 @@ print("y val shape: {}".format(y_val.shape))
 embedding_index = {}
 f = open("Tez hakkında/vectors.txt", encoding="utf8")
 
+#Adapted from: https://www.youtube.com/watch?v=ivqXiW0X42Q
 for line in f:
 	values = line.split()
 	word = values[0]
@@ -146,6 +148,7 @@ for word, i in word_index.items():
 		if embedding_vector is not None:
 			embedding_matrix[i] = embedding_vector
 
+#Based on https://machinelearningmastery.com/how-to-develop-a-word-level-neural-language-model-in-keras/
 model = Sequential()
 model.add(Embedding(vocab_size, 300, input_length=seq_length))
 model.add(LSTM(128))
@@ -163,6 +166,7 @@ history = model.fit(X_train, y_train, batch_size=64, epochs=1, shuffle=True, ver
 #model.save('model2.h5')
 #dump(tokenizer, open('tokenizer.pkl', 'wb'))
 
+#By author
 figure(figsize=(8, 6), dpi=80)
 
 plt.plot(history.history['accuracy'])
