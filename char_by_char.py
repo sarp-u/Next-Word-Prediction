@@ -89,7 +89,7 @@ pickle.dump(history, open("history1.p", "wb"))
 model = load_model('next_word_model1.h5')
 history = pickle.load(open("history1.p", "rb"))
 
-# By Author 
+#Based on https://blog.devgenius.io/next-word-prediction-using-long-short-term-memory-lstm-13ea21eb9ead
 figure(figsize=(8, 6), dpi=80)
 plt.plot(history.history['accuracy'])
 plt.plot(history.history['val_accuracy'])
